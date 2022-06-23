@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 import { FiMenu } from "react-icons/fi";
+import Link from "next/link";
 
 export const Navbar = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
@@ -35,8 +36,10 @@ export const Navbar = () => {
                   )}
                 </ButtonGroup>
                 <HStack spacing="3">
-                  <Button variant="ghost">Log in</Button>
-                  <Button variant="primary">Sign up</Button>
+                  <Link href="/login">
+                    <Button>Log in</Button>
+                  </Link>
+                  <Button>Sign up</Button>
                 </HStack>
               </Flex>
             ) : (

@@ -1,14 +1,18 @@
-import { Button } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import { useEffect } from "react";
 import { Navbar } from "../components/navbar";
+import useGiftees from "../hooks/useGiftees";
 
 const Home: NextPage = () => {
+  const { data, isLoading, isError } = useGiftees();
+
+  useEffect(() => {
+    console.log("data", data);
+  }, [data, isLoading]);
+
   return (
     <>
       <Navbar />
-      <Button>My Button</Button>
     </>
   );
 };
